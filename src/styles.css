@@ -64,6 +64,55 @@ body {
   margin-bottom: 8px;
 }
 
+.field-label.as-label {
+  margin-bottom: 0;
+  margin-right: 4px;
+}
+
+.topology-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.seg {
+  background: var(--panel-2);
+  border: none;
+  color: var(--muted);
+  padding: 7px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.seg + .seg {
+  border-left: 1px solid var(--border);
+}
+
+.seg:hover {
+  color: var(--text);
+}
+
+.seg-on {
+  background: var(--accent);
+  color: #08111f;
+}
+
+.topology-hint {
+  flex-basis: 100%;
+}
+
 .perm-input {
   width: 100%;
   background: var(--panel-2);
@@ -173,6 +222,11 @@ button.primary:disabled {
   font-size: 1.35rem;
   word-break: break-all;
   padding-top: 8px;
+}
+
+.stat-value.small-value {
+  font-size: 1.4rem;
+  padding-top: 6px;
 }
 
 .stat-label {
@@ -397,4 +451,100 @@ code {
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 0 5px;
+}
+
+.mono {
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+}
+
+/* ============================ 环状轨迹 ============================ */
+
+.ring-states {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 8px 0 4px;
+}
+
+.ring-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ring-block .state-caption {
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.arrow-vert {
+  font-size: 0.95rem;
+}
+
+.ring-svg {
+  display: block;
+}
+
+.ring-muted {
+  opacity: 0.75;
+}
+
+.ring-base {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+.ring-arc {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.ring-arc-selected {
+  stroke: var(--accent);
+}
+
+.ring-cut {
+  stroke: #ffffff;
+  stroke-width: 2.5;
+}
+
+.ring-cut-label {
+  fill: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.ring-node {
+  fill: var(--panel-2);
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.ring-node-pos {
+  fill: #1d3328;
+  stroke: #2fbf71;
+}
+
+.ring-node-neg {
+  fill: #3a2026;
+  stroke: #e06b80;
+}
+
+.ring-node-label {
+  fill: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: ui-monospace, Consolas, monospace;
+  pointer-events: none;
+}
+
+.ring-node-hit {
+  stroke: var(--accent);
+  stroke-width: 3.5;
 }
