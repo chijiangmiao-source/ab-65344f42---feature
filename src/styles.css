@@ -64,6 +64,48 @@ body {
   margin-bottom: 8px;
 }
 
+.topo-switch {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.topo-option {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  text-align: left;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.topo-option:hover {
+  border-color: var(--accent);
+}
+
+.topo-option.topo-active {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+  background: #1d2840;
+}
+
+.topo-title {
+  font-weight: 700;
+}
+
+.topo-note {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 .perm-input {
   width: 100%;
   background: var(--panel-2);
@@ -269,6 +311,87 @@ button.primary:disabled {
 
 .step-hint {
   margin: 12px 0 0;
+}
+
+/* 环形轨迹 */
+.ring-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ring-svg {
+  overflow: visible;
+}
+
+.ring-base {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+.ring-arc {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.ring-marker {
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.ring-marker-pos {
+  fill: #1c3a2c;
+}
+
+.ring-marker-neg {
+  fill: #432230;
+}
+
+.ring-marker-hit {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.ring-label {
+  fill: var(--text);
+  font-family: ui-monospace, Consolas, monospace;
+  font-weight: 700;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.ring-cut {
+  fill: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.ring-cut-tick {
+  stroke: var(--muted);
+  stroke-width: 1.5;
+}
+
+.ring-cut-bound {
+  fill: var(--accent);
+  stroke: none;
+}
+
+.ring-cut-tick.ring-cut-bound {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.ring-hint {
+  text-align: center;
+}
+
+.state-next .ring-base {
+  opacity: 0.75;
 }
 
 .legend {
